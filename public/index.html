@@ -1,0 +1,23 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+	console.log('dom ready.');
+	$.ajax({
+		method:"post",
+		url: "http://localhost:3012",
+		headers: {'X-HOGEHOGE': 'foobar'},
+		data: { hoge: "fuga" }
+	}).then(function(response) {
+		console.log(response);
+	}).catch(function(e){
+		console.log(e);
+	});
+});
+</script>
+</head>
+<body>
+	test
+</body>
+</html>
