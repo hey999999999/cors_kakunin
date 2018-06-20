@@ -1,7 +1,8 @@
 const express = require('express');
 const app1 = express();
 app1.use(express.static(__dirname + '/public'));
-app1.listen(3011, () => console.log('listen 3011'));
+const port = process.env.PORT || '3000';
+app1.listen(port, () => console.log('listen ' + port));
 
 const app2 = express();
 app2.use((req, res, next) => {
